@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Perguntas 1.unity
+- path: Assets/Scenes/SelecaoDeFases_Fund.unity
   isLoaded: 1
   isActive: 1
