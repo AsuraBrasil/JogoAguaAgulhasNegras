@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoAgua.CSharp.Plugins", "ProjetoAgua.CSharp.Plugins.csproj", "{60ED56F3-0A82-5F75-2EA6-B68AD832B957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoAgua.CSharp", "ProjetoAgua.CSharp.csproj", "{EDEE8E4E-9211-12F9-F430-56FD56F26A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoAgua.CSharp.Editor", "ProjetoAgua.CSharp.Editor.csproj", "{56FF5957-BFE9-3563-B1CD-A18F891108ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60ED56F3-0A82-5F75-2EA6-B68AD832B957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60ED56F3-0A82-5F75-2EA6-B68AD832B957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60ED56F3-0A82-5F75-2EA6-B68AD832B957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60ED56F3-0A82-5F75-2EA6-B68AD832B957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEE8E4E-9211-12F9-F430-56FD56F26A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEE8E4E-9211-12F9-F430-56FD56F26A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEE8E4E-9211-12F9-F430-56FD56F26A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEE8E4E-9211-12F9-F430-56FD56F26A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56FF5957-BFE9-3563-B1CD-A18F891108ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56FF5957-BFE9-3563-B1CD-A18F891108ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56FF5957-BFE9-3563-B1CD-A18F891108ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56FF5957-BFE9-3563-B1CD-A18F891108ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
