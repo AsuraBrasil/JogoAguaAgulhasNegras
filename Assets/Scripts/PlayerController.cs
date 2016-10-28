@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject vara;
     public Animator anim;
     public AudioSource sweepSFX;
+    public AudioSource hurtSFX;
 
     public float fireWait = .2f; //Espera da Animação para poder Usar de Novo
     private float nextFire; //Armazena o tempo atual + o tempo de espera
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (!gm.bloqueiaAtaque)
         {
-            if (Input.GetButton("Fire1") && Time.time > nextFire)
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
             {
                 nextFire = Time.time + fireWait;
                 anim.SetTrigger("Fire");
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour {
             if(!imune)
             { 
                 Debug.Log("Tomou Dano!");
+                hurtSFX.Play();
                 if (gm.dificuldade == GameManager.Dificuldade.normal) //Na dificuldade normal (Ens. Medio), ao bater em uma pedra você perde pontos.
                 {
                     gm.Pontuar(-10);

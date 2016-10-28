@@ -14,7 +14,7 @@ public class Obstaculo : MonoBehaviour
         Vector3 newPos = new Vector3(transform.position.x + 1f * -speed, transform.position.y, transform.position.z);
         transform.position = newPos;
 
-        if (this.gameObject.transform.position.x < -11)
+        if (this.gameObject.transform.position.x < -13)
         {
             DestroyObject(this.gameObject);
         }

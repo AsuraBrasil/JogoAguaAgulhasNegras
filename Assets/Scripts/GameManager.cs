@@ -159,18 +159,23 @@ public class GameManager : MonoBehaviour {
     internal void EncerraFase()
     {
         Debug.Log("Acabou!");
-        //Podia colocar uma só variavel 'acabou' para gerenciar tudo isso, mas já era -q
         liberaFundo = false;
         continuaWaves = false;
+        //Podia colocar uma só variavel 'acabou' para gerenciar tudo isso, mas já era -q
+        StartCoroutine(EsperaWaveAcabar(5f));
+        //Chama UI de Pontuação e Finalização da Fase, com botão para Prosseguir as Perguntas.
+    }
+
+    IEnumerator EsperaWaveAcabar(float secs)
+    {
+        yield return new WaitForSeconds(secs);
         bloqueiaAtaque = true;
-        if(ui.escapeWindow.activeInHierarchy)
+        if (ui.escapeWindow.activeInHierarchy)
         {
             ui.FecharJanela(ui.escapeWindow);
         }
         ui.MostrarJanela(ui.completedWindow);
-        //Chama UI de Pontuação e Finalização da Fase, com botão para Prosseguir as Perguntas.
     }
-
     
 
 }//FIM
