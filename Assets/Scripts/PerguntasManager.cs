@@ -9,6 +9,9 @@ public class PerguntasManager : MonoBehaviour
     public float score; //Pontuação
     public int perguntaAtual; //Número da Pergunta Atual
     public Pergunta[] listaPerguntas; //Lista com as Perguntas
+    public AudioSource acertouAudio;
+    public AudioSource errouAudio;
+    public AudioSource completionAudio;
 
     //UI
     public Text pgtNumeroText;
@@ -49,7 +52,7 @@ public class PerguntasManager : MonoBehaviour
 
     public void AtualizaPergunta()
     {
-        int rnd = UnityEngine.Random.Range(0, listaPerguntas.Length - 1);
+        int rnd = UnityEngine.Random.Range(0, listaPerguntas.Length);
         escolhida = listaPerguntas[rnd];
         //
         List<Pergunta> temp = new List<Pergunta>(listaPerguntas);
@@ -112,6 +115,7 @@ public class PerguntasManager : MonoBehaviour
             if (respEscolhida == respCerta)
             {
                 Debug.Log("Acertou!"); //Resposta escolhida fica verde
+                acertouAudio.Play();
                 foreach (Text t in listaRespostas)
                 {
                     if(t.gameObject.GetComponentInParent<Image>().color == Color.yellow)
@@ -122,6 +126,7 @@ public class PerguntasManager : MonoBehaviour
             else
             {
                 Debug.Log("Errou!"); //Resposta escolhida fica vermelha e Resposta certa verde
+                errouAudio.Play();
                 foreach (Text t in listaRespostas)
                 {
                     if (t.gameObject.GetComponentInParent<Image>().color == Color.yellow)
@@ -134,6 +139,10 @@ public class PerguntasManager : MonoBehaviour
             respBlock.SetActive(true);
             //Muda o texto do botão de "Responder" para "Próxima" e a sua função de "Responder()" para "ProximaPergunta()";
             btnConfirma.gameObject.GetComponentInChildren<Text>().text = "Próxima Pergunta";
+            if (listaPerguntas.Length == 0)
+            {
+                btnConfirma.gameObject.GetComponentInChildren<Text>().text = "Ver Pontuação";
+            }
             btnConfirma.onClick.RemoveAllListeners();
             btnConfirma.onClick.AddListener(() => ProximaPergunta());
         }
@@ -148,6 +157,7 @@ public class PerguntasManager : MonoBehaviour
         else
         {
             Debug.Log("Acabou");
+            completionAudio.Play();
             //Chama Janela de Conclusão com a mensagem "Parabéns, sua pontuação foi: " e um botão para Seleção de Fases da Dificuldade
             janelaDeConclusao.SetActive(true);
             scoreText.text = score.ToString();

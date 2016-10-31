@@ -34,6 +34,7 @@ public class Coletavel : MonoBehaviour {
             if(gm.dificuldade == GameManager.Dificuldade.normal) //Na dificuldade normal (Ens. Medio), ao deixar um lixo passar voc� perde pontos.
             {
                 gm.Pontuar(-5);
+                gm.negativeAudio.Play();
             }
             DestroyObject(this.gameObject);
         }

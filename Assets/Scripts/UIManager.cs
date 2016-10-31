@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour {
     public Text startText; //Texto de An�ncio da Fase
     public Slider progressSlider; //Slider da Barra de Progresso
     public GameObject completedWindow; //Janela de Conclus�o da Fase
+    public GameObject failWindow;
     public GameObject escapeWindow; //Janela que pergunta se o jogador Deseja retornar a Seleção de Fase
     public Image[] hearts;
 

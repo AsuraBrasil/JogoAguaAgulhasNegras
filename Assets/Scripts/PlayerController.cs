@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+using System;
 
 [System.Serializable]
 public class Boundary
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour {
     public float fireWait = .2f; //Espera da Animação para poder Usar de Novo
     private float nextFire; //Armazena o tempo atual + o tempo de espera
     private bool imune = false;
+    private float veloInicial = -1; //Velocidade inicial
 
     //Referencia ao Controlador do jogo
     private GameManager gm;
@@ -28,6 +29,11 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         gm = GameManager.gm;
+        if (movementSpeed > 0)
+        {
+            veloInicial = movementSpeed; //Variavel utilizada para restaurar a velocidade ao valor estipulado inicialmente
+        }
+        
     }
 
     void Update()
@@ -74,6 +80,33 @@ public class PlayerController : MonoBehaviour {
         rigid2d.MoveRotation(15*moveVertical);
     }
 
+    //Função ativada quando algo entra no Collider2D da Jangada
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Obstaculo")
+        {
+            if (!imune)
+            {
+                Debug.Log("Tomou Dano!");
+                hurtSFX.Play();
+                if (gm.dificuldade == GameManager.Dificuldade.normal) //Na dificuldade normal (Ens. Medio), ao bater em uma pedra você perde pontos.
+                {
+                    gm.Pontuar(-10);
+                }
+                anim.SetTrigger("Imune");
+                imune = true;
+                StartCoroutine(DesativaImune(2f));
+                gm.AtualizaVida(-(other.GetComponent<Obstaculo>().dano));
+            }
+            if (other.GetComponent<Obstaculo>().lentidao)
+            {
+                movementSpeed = movementSpeed * .5f; //Diminui a velocidade pela metade;
+                StartCoroutine(RestauraVelocidade(2f));
+            }
+
+        }
+    }
+
     //EsperarTempo para Encerrar a Animação da Vara
     IEnumerator EsperaTempo(float waitSecs, GameObject gO)
     {
@@ -94,24 +127,15 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    //Tempo para a velocidade retornar ao normal após uma diminuição ou aumento nela
+    IEnumerator RestauraVelocidade(float waitSecs)
     {
-        if (other.tag == "Obstaculo")
+        yield return new WaitForSeconds(waitSecs);
+        if (movementSpeed != veloInicial)
         {
-            if(!imune)
-            { 
-                Debug.Log("Tomou Dano!");
-                hurtSFX.Play();
-                if (gm.dificuldade == GameManager.Dificuldade.normal) //Na dificuldade normal (Ens. Medio), ao bater em uma pedra você perde pontos.
-                {
-                    gm.Pontuar(-10);
-                }
-                anim.SetTrigger("Imune");
-                imune = true;
-                StartCoroutine(DesativaImune(2f));
-                gm.AtualizaVida(-(other.GetComponent<Obstaculo>().dano));
-            }
+            movementSpeed = veloInicial;
         }
     }
+
 
 }//FIM

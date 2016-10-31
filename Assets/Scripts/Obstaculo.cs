@@ -8,6 +8,7 @@ public class Obstaculo : MonoBehaviour
 
     public int dano = 1;
     public float speed = 0.1f;
+    public bool lentidao = false; //Variavel para dizer que este obstaculo diminui a velocidade
 
     void FixedUpdate()
     {

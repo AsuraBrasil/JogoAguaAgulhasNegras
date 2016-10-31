@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour {
     public Dificuldade dificuldade = Dificuldade.facil;
     public float score = 0;
     public int vida = 6;
-    public AudioSource scoringAudio;
+    public AudioSource scoringAudio; //Som produzido quando o lixo é coletado
+    public AudioSource negativeAudio; //Som produzido quando o lixo é deixado para trás sem ser pego
+    public AudioSource completionAudio; //Som produzido quando o jogador completa a fase
     public Vector2 spawnVal = new Vector2(-5,2); //(Min,Max) EixoY
     public int hazardCount; //Quantidade máxima de lixos por Onda
     public float spawnWait; //Tempo de espera para o próximo Lixo da Onda aparecer
@@ -168,13 +170,28 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EsperaWaveAcabar(float secs)
     {
-        yield return new WaitForSeconds(secs);
-        bloqueiaAtaque = true;
+       
         if (ui.escapeWindow.activeInHierarchy)
         {
             ui.FecharJanela(ui.escapeWindow);
         }
-        ui.MostrarJanela(ui.completedWindow);
+        if (vida > 0)
+        {
+            yield return new WaitForSeconds(secs);
+            bloqueiaAtaque = true;
+            foreach (AudioSource aud in GameObject.FindGameObjectWithTag("MainCamera").GetComponents<AudioSource>())
+            {
+                aud.Stop();
+            }
+            completionAudio.Play();
+            ui.MostrarJanela(ui.completedWindow); //Venceu!
+        } 
+        else
+        {
+            bloqueiaAtaque = true;
+            ui.MostrarJanela(ui.failWindow); //Perdeu!
+        }
+       
     }
     
 
