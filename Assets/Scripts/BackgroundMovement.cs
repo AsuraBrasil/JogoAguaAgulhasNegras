@@ -49,8 +49,9 @@ public class BackgroundMovement : MonoBehaviour {
     {
         while (GameManager.gm.liberaFundo)
         {
-            float diff = Mathf.Abs(posFinal + 9f) - Mathf.Abs(parte1.position.x + 9f); //9f � por causa da posi��o do objeto Pai
-            float percent = diff / (Mathf.Abs(posFinal + 9f));
+            float mod = Mathf.Abs(transform.position.x);
+            float diff = Mathf.Abs(posFinal + mod) - Mathf.Abs(parte1.position.x + mod); //9f � por causa da posi��o do objeto Pai
+            float percent = diff / (Mathf.Abs(posFinal + mod));
            // Debug.Log(Mathf.Abs(posFinal + 9f) + "-" + Mathf.Abs(parte1.position.x + 9f) + "=" + diff + ", " + percent);
             GameManager.gm.ui.progressSlider.value = percent;   
             yield return new WaitForSeconds(.5f);
