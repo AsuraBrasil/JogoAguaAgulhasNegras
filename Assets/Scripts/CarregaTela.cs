@@ -54,7 +54,7 @@ public class CarregaTela : MonoBehaviour
         string nomeTela;
         if (GameManager.gm.dificuldade == GameManager.Dificuldade.normal)
         {
-            nomeTela = "SelecaoDeFases_Med";
+            nomeTela = "SelecaoDeFases";
         }
         else
         {

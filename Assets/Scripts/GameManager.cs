@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour {
     public UIManager ui = null;
     [HideInInspector]
     public bool bloqueiaAtaque = false; //libera o movimento do fundo
+    [HideInInspector]
+    public bool bloqueiaMovimento = false; //libera o movimento do fundo
 
     void Awake()
     {
@@ -165,6 +167,16 @@ public class GameManager : MonoBehaviour {
         continuaWaves = false;
         //Podia colocar uma só variavel 'acabou' para gerenciar tudo isso, mas já era -q
         StartCoroutine(EsperaWaveAcabar(5f));
+        //Chama UI de Pontuação e Finalização da Fase, com botão para Prosseguir as Perguntas.
+    }
+
+    internal void EncerraFaseBoss()
+    {
+        Debug.Log("Acabou!");
+        liberaFundo = false;
+        continuaWaves = false;
+        //Podia colocar uma só variavel 'acabou' para gerenciar tudo isso, mas já era -q
+        StartCoroutine(EsperaWaveAcabar(0.2f));
         //Chama UI de Pontuação e Finalização da Fase, com botão para Prosseguir as Perguntas.
     }
 

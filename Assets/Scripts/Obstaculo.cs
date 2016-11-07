@@ -12,7 +12,16 @@ public class Obstaculo : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 newPos = new Vector3(transform.position.x + 1f * -speed, transform.position.y, transform.position.z);
+        Vector3 newPos = Vector3.zero;
+        if (GameManager.gm.dificuldade == GameManager.Dificuldade.normal)
+        {
+            newPos = new Vector3(transform.position.x + 1f * -speed, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            newPos = new Vector3(transform.position.x + 0.5f * -speed, transform.position.y, transform.position.z);
+        }
+        
         transform.position = newPos;
 
         if (this.gameObject.transform.position.x < -13)

@@ -64,20 +64,24 @@ public class PlayerController : MonoBehaviour {
     //FixedUpdate é Melhor para se ter um Movimento de mesma velocidade independente da velocidade da m�quina
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 normalize = new Vector2(moveHorizontal, moveVertical);
-        normalize = Vector2.ClampMagnitude(normalize, 1);
-        Vector2 newPos = new Vector2(rigid2d.position.x + normalize.x * movementSpeed, rigid2d.position.y + normalize.y * movementSpeed);
-        rigid2d.position = newPos;
+        if(!gm.bloqueiaMovimento)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector2 normalize = new Vector2(moveHorizontal, moveVertical);
+            normalize = Vector2.ClampMagnitude(normalize, 1);
+            Vector2 newPos = new Vector2(rigid2d.position.x + normalize.x * movementSpeed, rigid2d.position.y + normalize.y * movementSpeed);
+            rigid2d.position = newPos;
 
-        rigid2d.position = new Vector2
-        (
-            Mathf.Clamp(rigid2d.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(rigid2d.position.y, boundary.yMin, boundary.yMax)
-        );
+            rigid2d.position = new Vector2
+            (
+                Mathf.Clamp(rigid2d.position.x, boundary.xMin, boundary.xMax),
+                Mathf.Clamp(rigid2d.position.y, boundary.yMin, boundary.yMax)
+            );
 
-        rigid2d.MoveRotation(15*moveVertical);
+            rigid2d.MoveRotation(15 * moveVertical);
+        }
+
     }
 
     //Função ativada quando algo entra no Collider2D da Jangada
