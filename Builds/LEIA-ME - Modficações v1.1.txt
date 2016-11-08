@@ -1,0 +1,57 @@
+=====================================================
+
+	    Modificações da versão 1.1:
+
+=====================================================
+
+- Vídeo das Logos adicionado na Tela de Título
+
+- Mensagem no início de cada fase foi modificada:
+
+	> Fase 1 : Colete os Lixos;
+	> Fase 2 a 4 : Colete os Lixos e Desvie dos Perigos;
+	> Fase 5 : Derrote o Pororoca.
+
+- Lixo Madeira foi modificado:
+	> Aumentei o Tamanho, rotacionei um pouco e modifiquei para uma cor marrom.
+
+- Agora o Pororoca dá uma pontuação de 3000 pontos ao ser derrotado, antes não dava nada.
+
+- Agora as Perguntas adicionam 300 à pontuação, antigamente adicionava apenas 100.
+
+
+=====================================================
+
+	Instruções para o Teste dessa versão:
+
+=====================================================
+
+- Abrem e Fechem o Jogo duas vezes para conferir se o vídeo no início está sendo reproduzido normalmente.
+	> Testem em duas resoluções diferentes, por favor.
+
+- Entrem em cada Fase na dificuldade Fácil e Normal para verificarem a Mensagem no Início.
+	> Não precisa jogar a Fase toda.
+
+- Joguem a última fase nas duas dificuldades e verifiquem a pontuação:
+	> Antes e depois de Matar o Chefão;
+	> E antes e depois das perguntas (conte quantas acertou e verifique 
+	  se somou essa quantidade vezes 300).
+
+
+
+
+====================== AVISO:  ===============================
+
+ÉLCIO E DIEGO - POR FAVOR ME REALIZEM OS TESTES E ME DEEM O FEEDBACK DE VOCÊS ATÈ ESTA QUARTA-FEIRA, DIA 09/11.
+
+VALEU!
+
+
+
+
+
+
+
+
+
+

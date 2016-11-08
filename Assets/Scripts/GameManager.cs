@@ -63,10 +63,21 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator StartText()
     {
-        yield return new WaitForSeconds(1f);
-        ui.startText.text = "Preparado?";
-        yield return new WaitForSeconds(1f);
-        ui.startText.text = "Vai!";
+        yield return new WaitForSeconds(1.5f);
+        if (ui.startText.text == "Fase 1")
+        {
+            ui.startText.text = "Colete os Lixos";
+        }
+        else if(ui.startText.text == "Fase 5")
+        {
+            ui.startText.text = "Derrote o Pororoca!";
+        }
+        else
+        {
+            ui.startText.text = "Colete os Lixos e Desvie dos Perigos";
+        }
+        //yield return new WaitForSeconds(1f);
+        //ui.startText.text = "Vai!";
     }
 
     IEnumerator SpawnWaves()

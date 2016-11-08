@@ -25,6 +25,7 @@ public class BossLife : MonoBehaviour
     {
         if(bossLife <= 0 && !acabou)
         {
+            gm.Pontuar(3000);
             gm.EncerraFaseBoss();
             acabou = true;
         }

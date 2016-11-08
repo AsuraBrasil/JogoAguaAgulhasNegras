@@ -121,7 +121,7 @@ public class PerguntasManager : MonoBehaviour
                     if(t.gameObject.GetComponentInParent<Image>().color == Color.yellow)
                     t.gameObject.GetComponentInParent<Image>().color = Color.green;
                 }
-                score += 100;
+                score += 300;
             }
             else
             {

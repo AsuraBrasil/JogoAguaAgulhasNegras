@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.tag == "Obstaculo")
         {
-            if (!imune)
+            if (!imune && gm.continuaWaves) //"Continua Waves" fica Falso quando a Fase é encerrada. Por isso não queremos que o jogador tome dano quando este estiver falso
             {
                 Debug.Log("Tomou Dano!");
                 hurtSFX.Play();
