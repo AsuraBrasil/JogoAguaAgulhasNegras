@@ -40,16 +40,17 @@ public class PlayerController : MonoBehaviour {
     {
         if (!gm.bloqueiaAtaque)
         {
-            if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+            //Se for Windows irá captar o botão do Mouse
+            #if UNITY_STANDALONE_WIN
+            if (Input.GetButtonDown("Fire1"))
             {
-                nextFire = Time.time + fireWait;
-                anim.SetTrigger("Fire");
-                vara.SetActive(true);
-                sweepSFX.PlayDelayed(.2f);
-                StartCoroutine(EsperaTempo(fireWait, vara));
+                Ataque();
             }
+            #endif
+            //Se for Android, irá captar o botão na Tela, no canto inferior direito
         }
 
+        #if UNITY_STANDALONE_WIN
         //Esc para aparecer a janela que perguntar se deseja Voltar a tela de Seleção de Fase (Não irei pausar)
         if (Input.GetButton("Cancel"))
         {
@@ -59,6 +60,30 @@ public class PlayerController : MonoBehaviour {
                 gm.ui.MostrarJanela(gm.ui.escapeWindow);
             }
         }
+        #endif
+
+        //Se for no Android
+        #if UNITY_ANDROID
+                    if(Input.GetKey(KeyCode.Escape)) //Botão de Retorno do Celular
+                    {
+                        if (!gm.ui.escapeWindow.activeInHierarchy)
+                        {
+                            gm.ui.MostrarJanela(gm.ui.escapeWindow);
+                        }
+                    }
+        #endif
+    }//END UPDATE
+
+    public void Ataque() //Chamado pelo clique do botão esquerdo do Mouse no Dektop ou pelo botão na Tela quando no Celular
+    {
+        if(Time.time > nextFire)
+        {
+            nextFire = Time.time + fireWait;
+            anim.SetTrigger("Fire");
+            vara.SetActive(true);
+            sweepSFX.PlayDelayed(.2f);
+            StartCoroutine(EsperaTempo(fireWait, vara));
+        }
     }
 
     //FixedUpdate é Melhor para se ter um Movimento de mesma velocidade independente da velocidade da m�quina
@@ -66,8 +91,16 @@ public class PlayerController : MonoBehaviour {
     {
         if(!gm.bloqueiaMovimento)
         {
+#if UNITY_STANDALONE_WIN
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
+#endif
+
+#if UNITY_ANDROID
+            float moveHorizontal = VirtualJoystick.joystick.Horizontal();//Input.GetAxis("Horizontal");
+            float moveVertical = VirtualJoystick.joystick.Vertical();//Input.GetAxis("Vertical");
+#endif
+
             Vector2 normalize = new Vector2(moveHorizontal, moveVertical);
             normalize = Vector2.ClampMagnitude(normalize, 1);
             Vector2 newPos = new Vector2(rigid2d.position.x + normalize.x * movementSpeed, rigid2d.position.y + normalize.y * movementSpeed);

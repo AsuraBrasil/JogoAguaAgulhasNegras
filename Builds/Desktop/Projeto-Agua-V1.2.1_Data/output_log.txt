@@ -1,0 +1,64 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
+    Vendor:   Intel
+    VRAM:     810 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.343 seconds
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Asura\Documents\#PROJETOS\ProjetoAgua\Builds\Desktop\Projeto-Agua-V1.2.1_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.139200 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.270498 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 274.
+Total: 0.421763 ms (FindLiveObjects: 0.042518 ms CreateObjectMapping: 0.051804 ms MarkObjects: 0.228231 ms  DeleteObjects: 0.095788 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.466069 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 415.
+Total: 0.454018 ms (FindLiveObjects: 0.061089 ms CreateObjectMapping: 0.057179 ms MarkObjects: 0.327929 ms  DeleteObjects: 0.004887 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.065893 ms
+
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 1181.
+Total: 0.685182 ms (FindLiveObjects: 0.136352 ms CreateObjectMapping: 0.040074 ms MarkObjects: 0.446687 ms  DeleteObjects: 0.059623 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1798 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.465008 ms
+
+Unloading 113 unused Assets to reduce memory usage. Loaded Objects now: 505.
+Total: 4.799696 ms (FindLiveObjects: 0.070864 ms CreateObjectMapping: 0.083082 ms MarkObjects: 0.413943 ms  DeleteObjects: 4.229363 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.913413 ms
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 364.
+Total: 0.761910 ms (FindLiveObjects: 0.062067 ms CreateObjectMapping: 0.036165 ms MarkObjects: 0.620671 ms  DeleteObjects: 0.039586 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.753030 ms
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 372.
+Total: 0.418831 ms (FindLiveObjects: 0.032255 ms CreateObjectMapping: 0.034698 ms MarkObjects: 0.310335 ms  DeleteObjects: 0.040563 ms)
+
